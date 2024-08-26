@@ -1,0 +1,56 @@
+{
+  "name": "realm",
+  "version": "3.4.1",
+  "summary": "The official Realm SDK for Flutter",
+  "description": "Realm is a mobile database - an alternative to SQLite and key-value stores.",
+  "homepage": "https://realm.io",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Realm": "help@realm.io"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.h",
+  "vendored_frameworks": "realm_dart.xcframework",
+  "dependencies": {
+    "Flutter": [
+
+    ]
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "compiler_flags": "-DBUNDLE_ID='\"todo_list\"'",
+  "libraries": [
+    "c++",
+    "z",
+    "compression"
+  ],
+  "swift_versions": "5.0",
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES"
+  },
+  "prepare_command": "source \"/Users/lilian/IdeaProjects/todo_list/ios/Flutter/flutter_export_environment.sh\" && cd \"$FLUTTER_APPLICATION_PATH\" && \"$FLUTTER_ROOT/bin/dart\" run realm install --target-os-type ios",
+  "script_phases": [
+    {
+      "name": "Download Realm Flutter iOS Binaries",
+      "script": "source \"$PROJECT_DIR/../Flutter/flutter_export_environment.sh\" && cd \"$FLUTTER_APPLICATION_PATH\" && \"$FLUTTER_ROOT/bin/dart\" run realm install --target-os-type ios",
+      "execution_position": "before_headers"
+    },
+    {
+      "name": "Report Metrics",
+      "script": "source \"$PROJECT_DIR/../Flutter/flutter_export_environment.sh\" && cd \"$FLUTTER_APPLICATION_PATH\" && \"$FLUTTER_ROOT/bin/dart\" run realm metrics --flutter-root \"$FLUTTER_ROOT\" --target-os-type ios --target-os-version \"$IPHONEOS_DEPLOYMENT_TARGET\"",
+      "execution_position": "before_compile"
+    }
+  ],
+  "resource_bundles": {
+    "realm_privacy": [
+      "Resources/PrivacyInfo.xcprivacy"
+    ]
+  },
+  "swift_version": "5.0"
+}

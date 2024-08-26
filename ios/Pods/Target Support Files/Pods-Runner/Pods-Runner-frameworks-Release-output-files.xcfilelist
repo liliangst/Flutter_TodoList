@@ -1,0 +1,2 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/realm.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/realm_dart.framework
